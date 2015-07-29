@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,7 +16,12 @@ namespace Dev14_Net46_Mvc5.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            // Setting culture is only valid starting with .NET 4.6
+            CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("fr-fr");
+
+            // Use C# 6 string interpolation
+            string culture = CultureInfo.CurrentCulture.Name;
+            ViewBag.Message = $"Your application description page. Culture is {culture}";
 
             return View();
         }
