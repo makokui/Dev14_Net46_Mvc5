@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Dev14_Net46_Mvc5.Common;
 
 namespace Dev14_Net46_Mvc5.Controllers
 {
@@ -16,12 +17,13 @@ namespace Dev14_Net46_Mvc5.Controllers
 
         public ActionResult About()
         {
-            // Setting culture is only valid starting with .NET 4.6
-            CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("fr-fr");
+            //// Setting culture is only valid starting with .NET 4.6
+            //CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("fr-fr");
 
-            // Use C# 6 string interpolation
-            string culture = CultureInfo.CurrentCulture.Name;
-            ViewBag.Message = $"Your application description page. Culture is {culture}";
+            //// Use C# 6 string interpolation
+            //string culture = CultureInfo.CurrentCulture.Name;
+            //ViewBag.Message = $"Your application description page. Culture is {culture}";
+            ViewBag.Message = CultureHelper.GetCulture();
 
             return View();
         }
