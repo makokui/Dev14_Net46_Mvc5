@@ -17,12 +17,7 @@ namespace Dev14_Net46_Mvc5.Controllers
 
         public ActionResult About()
         {
-            //// Setting culture is only valid starting with .NET 4.6
-            //CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("fr-fr");
-
-            //// Use C# 6 string interpolation
-            //string culture = CultureInfo.CurrentCulture.Name;
-            //ViewBag.Message = $"Your application description page. Culture is {culture}";
+            // Call helper that uses .NET 4.6 and C# 6 features
             ViewBag.Message = CultureHelper.GetCulture();
 
             return View();
@@ -30,7 +25,7 @@ namespace Dev14_Net46_Mvc5.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = $"Your contact {"page"}.";
 
             return View();
         }
