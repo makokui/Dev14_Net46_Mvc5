@@ -10,6 +10,8 @@ namespace Dev14_Net46_Mvc5.Controllers
 {
     public class HomeController : Controller
     {
+        public static int Counter { get; set; }
+
         public ActionResult Index()
         {
             return View();
