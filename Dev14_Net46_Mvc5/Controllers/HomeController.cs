@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Dev14_Net46_Mvc5.Common;
 using System.Diagnostics;
+using System.Threading;
 
 namespace Dev14_Net46_Mvc5.Controllers
 {
@@ -34,7 +35,14 @@ namespace Dev14_Net46_Mvc5.Controllers
         {
             ViewBag.Message = $"Your contact {"page"}.";
 
+            Foo();
+
             return View();
+        }
+
+        private void Foo()
+        {
+            Thread.Sleep(5000);
         }
     }
 }
