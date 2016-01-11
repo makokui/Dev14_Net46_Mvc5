@@ -42,7 +42,7 @@ namespace Dev14_Net46_Mvc5.Controllers
 
         private void Foo()
         {
-            Thread.Sleep(5000);
+            Foo();
         }
     }
 }
