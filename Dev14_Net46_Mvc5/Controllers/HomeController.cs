@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Dev14_Net46_Mvc5.Common;
 using System.Diagnostics;
 using System.Threading;
+using System.IO;
 
 namespace Dev14_Net46_Mvc5.Controllers
 {
@@ -33,6 +34,7 @@ namespace Dev14_Net46_Mvc5.Controllers
 
         public ActionResult Contact()
         {
+ 
             ViewBag.Message = "Your contact .";           
 
             return View();
@@ -53,11 +55,12 @@ namespace Dev14_Net46_Mvc5.Controllers
         {
             ViewBag.Message = "HighCPU Page";
 
-            ConsumeCPU(100,10);
+            ConsumeCPU(60,10); 
 
             return View();
         }
 
+       
         private void ConsumeCPU(int percentage, long seconds)
         {
             if (percentage < 0 || percentage > 100)
@@ -79,6 +82,14 @@ namespace Dev14_Net46_Mvc5.Controllers
                 if (exitWatch.ElapsedMilliseconds > seconds * 1000)
                     break;
             }
+ 
+        }
+
+        public ActionResult NotFoundException()
+        {
+            ViewBag.Message = "Not Found Exception";
+            FileStream f = System.IO.File.Open("d:\\home\\data\\notexist.file", FileMode.Open);            
+            return View();
         }
     }
 }

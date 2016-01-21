@@ -16,7 +16,9 @@ namespace Dev14_Net46_Mvc5.Common
 
             // Use C# 6 string interpolation
             string culture = CultureInfo.CurrentCulture.Name;
+ 
             return "Your application description page. ";
+ 
         }
     }
 }
