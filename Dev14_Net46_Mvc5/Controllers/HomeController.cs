@@ -42,9 +42,12 @@ namespace Dev14_Net46_Mvc5.Controllers
 
         private void Foo()
         {
-            string localText = null;
-            int null_pointer_exception = localText.Length;
-            Foo();
+            string value = null;
+            if (value.Length == 0) // <-- Causes exception
+            {
+                Console.WriteLine(value); // <-- Never reached
+            }
+            //Foo();
         }
     }
 }
